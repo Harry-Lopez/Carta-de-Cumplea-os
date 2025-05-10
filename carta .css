@@ -257,10 +257,12 @@ transform: scale(1.1);
   }
 }
 
-/* Media Queries */
+/* Media Queries Celular */
 @media (max-width: 321px) {
 .body{
-    width: auto;
+margin: 0; /* Asegúrate de que los márgenes del body sean 0 */
+  padding: 0; /* Asegúrate de que el padding del body sea 0 */
+  overflow-x: hidden;
     align-items: center;
 }
 
@@ -283,7 +285,6 @@ main{
   flex-direction: column;
   min-height: 100vh;
   margin-top: 310px;
-
 }
 
 .container-carta{
@@ -293,22 +294,20 @@ main{
     position: absolute;
     margin-top: 20px;
     right: 220px;
-
 }
 
 .carta{
-  border-left: 160px solid rgb(255, 133, 133);
-  border-right: 160px solid rgb(255, 133, 133);
+  border-left: 150px solid rgb(255, 133, 133);
+  border-right: 150px solid rgb(255, 133, 133);
   border-top: 185px solid transparent;
   border-bottom: 185px solid rgb(255, 118, 118);
     position: relative;
-
 }
 
 .pestaña {
   position: absolute;
-  border-left: 160px solid transparent;
-  border-right: 160px solid transparent;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
   border-top: 185px solid rgb(255, 48, 48);
   border-bottom: 185px solid transparent;
   transition: transform .75s;
@@ -317,21 +316,29 @@ main{
 
 
 .contenido{
-    position: absolute;
+    /*position: absolute;*/
   padding: 1.5rem;
   line-height: 2rem;
-  right: -220px;
+  right: auto;
   /*  */
   z-index: -1;
   background: white;
-  width: 320px;
-  height: 370px;
+  width: 280px;
+  height: 280px;
   transition: all .75s;
+  margin-left: 10px;
 }
 
+.mensaje{
+  margin-bottom: 10px;
+}
  /* Para que las palabras largas no se salgan del contenedor */
 p{
     word-wrap: break-word;
+}
+
+.gif{
+  margin-left: -200px;
 }
 
 .open-contenido {
