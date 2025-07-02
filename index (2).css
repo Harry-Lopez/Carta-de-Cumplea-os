@@ -1,0 +1,537 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  text-align: center;
+  font-family: cursive;
+  color: rgb(255, 255, 255);
+  background: fixed rgb(77, 77, 77) url(fondoProgramacion.jpg) no-repeat center center;
+  background-size: cover;
+
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*Tamaño de los textos*/
+h1{
+  margin-top: 40px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 55px;
+  text-transform: uppercase;
+}
+
+h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+h3{
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 55px;
+  text-transform: uppercase;
+}
+
+p{
+color: black;
+text-align: center;
+}
+
+/*Gif*/
+.gif{
+  max-width: 50%;
+  margin-top: 5px;
+}
+
+/*Botones 1ra section*/
+.button--primary {
+  background-color: rgb(217, 0, 58);
+    border: 1px solid rgb(170, 0, 45);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.button--primary:hover {
+  background-color: rgb(135, 40, 89);
+}
+
+#miBoton{
+  color: white;
+  background-color: rgb(217, 0, 58);
+  border: 1px solid rgb(170, 0, 45);
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#miBoton:hover{
+  background-color: rgb(135, 40, 89);
+}
+
+/*Mensaje pre-carta*/
+.mensaje{
+  text-align: right;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-right: 40px;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 20px;
+  margin-top: 300px;
+}
+
+.container-carta {
+  position: relative;
+}
+
+.pestaña {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 180px solid rgb(217, 0, 58);
+  border-bottom: 180px solid transparent;
+  transition: transform .75s;
+  transform-origin: top;
+}
+
+.contenido {
+  position: absolute;
+  padding: 1.5rem;
+  line-height: 2rem;
+  right: 5px;
+  /*  */
+  z-index: -1;
+  background: white;
+  width: 390px;
+  height: 350px;
+  transition: all .75s;
+}
+
+.carta {
+  border-left: 200px solid #1c8ccd;
+  border-right: 200px solid #1c8ccd;
+  border-top: 180px solid transparent;
+  border-bottom: 180px solid #137ebb;
+}
+
+/*Botones dinamicos de la carta*/
+#open{
+background-color: rgb(217, 0, 58);
+    border: 1px solid rgb(170, 0, 45);
+color: white;
+padding: 10px 20px;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 5px;
+margin-bottom: 30px;
+transition: background-color 0.75s;
+transition: transform 0.75s;
+}
+
+#open:hover {
+background-color: rgb(255, 0, 68);
+transform: scale(1.1);
+}
+
+#close{
+background-color: rgb(217, 0, 58);
+border: 1px solid rgb(170, 0, 45);
+color: white;
+padding: 10px 20px;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 5px;
+margin-bottom: 30px;
+transition: background-color 0.75s;
+transition: transform 0.75s;
+}
+
+#close:hover {
+background-color: rgb(255, 0, 68);
+transform: scale(1.1);
+}
+
+
+.open-pestaña {
+  transform: rotatex(180deg);
+}
+
+.open-contenido {
+  top: -250px;
+  height: 350px;
+
+  animation: moveContenido .5s forwards;
+}
+
+@keyframes move-contenido {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -120px;
+  }
+}
+
+.close-contenido {
+  animation: closeContenido .5s forwards;
+}
+
+@keyframes close-contenido {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/*Animacion de los corazones al abrir la carta*/
+.corazon{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 42%;
+  margin: auto;
+  font-size: 3rem;
+  z-index: 1;
+  animation: crecer 3s forwards;
+  transform: rotatez(-15deg);
+}
+
+@keyframes crecer{
+  0%{
+      scale: 1;
+      opacity: 1;
+  }
+  100%{
+      scale: 2;
+      opacity: 0;
+  }
+}
+
+.corazon2{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  margin: auto;
+  font-size: 3rem;
+  z-index: 1;
+  animation: crecer 3s forwards;
+  transform: rotatez(-5deg);
+}
+
+@keyframes crecer{
+  0%{
+      scale: 1;
+      opacity: 1;
+  }
+  100%{
+      scale: 2;
+      opacity: 0;
+  }
+}
+
+.corazon3{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  margin: auto;
+  font-size: 3rem;
+  z-index: 1;
+  animation: crecer 3s forwards;
+}
+
+@keyframes crecer{
+  0%{
+      scale: 1;
+      opacity: 1;
+  }
+  100%{
+      scale: 2;
+      opacity: 0;
+  }
+}
+
+.corazon4{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 62%;
+  margin: auto;
+  font-size: 3rem;
+  z-index: 1;
+  animation: crecer 3s forwards;
+  transform: rotatez(5deg);
+}
+
+@keyframes crecer{
+  0%{
+      scale: 1;
+      opacity: 1;
+  }
+  100%{
+      scale: 2;
+      opacity: 0;
+  }
+}
+
+.corazon5{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 85%;
+  margin: auto;
+  font-size: 3rem;
+  z-index: 1;
+  animation: crecer 3s forwards;
+  transform: rotatez(15deg);
+}
+
+@keyframes crecer{
+  0%{
+      scale: 1;
+      opacity: 1;
+  }
+  100%{
+      scale: 2;
+      opacity: 0;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 321px) {
+.body{
+    width: auto;
+    align-items: center;
+}
+
+.titulo{
+    width: auto;
+    font-size: 30px;
+}
+
+.gracias{
+    align-items: center;
+    width: auto;
+    font-size: 30px;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 310px;
+
+}
+
+.container-carta{
+    width: 100px;
+
+    margin-top: 50px;
+    position: absolute;
+    margin-top: 20px;
+    right: 220px;
+    transform: scale(0.9);
+    align-content: center;
+
+}
+
+.carta{
+  border-left: 160px solid #1c8ccd;
+  border-right: 160px solid #1c8ccd;
+  border-top: 185px solid transparent;
+  border-bottom: 185px solid #137ebb;
+    position: relative;
+
+    left: 10px;
+}
+
+.pestaña {
+  position: absolute;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 185px solid rgb(217, 0, 58);
+  border-bottom: 185px solid transparent;
+  transition: transform .75s;
+  transform-origin: top;
+  left: 10px;
+}
+
+
+.contenido{
+    position: absolute;
+  padding: 1.5rem;
+  line-height: 2rem;
+  right: -230px;
+  /*  */
+  z-index: -1;
+  background: white;
+  width: 320px;
+  height: 370px;
+  transition: all .75s;
+}
+
+ /* Para que las palabras largas no se salgan del contenedor */
+p{
+    word-wrap: break-word;
+}
+
+.open-contenido {
+  top: -320px;
+  height: 380px;
+
+  animation: moveContenido .5s forwards;
+}
+
+.gif{
+  max-width: 90%;
+}
+
+}
+
+/* Media Queries */
+@media (min-width: 322px) and (max-width: 376px) {
+
+  .body{
+    width: auto;
+    align-items: center;
+}
+
+.titulo{
+    width: auto;
+    font-size: 30px;
+}
+
+.gracias{
+    align-items: center;
+    width: auto;
+    font-size: 30px;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 280px;
+
+}
+
+.container-carta{
+    width: 100px;
+
+    margin-top: 50px;
+    position: absolute;
+    margin-top: 20px;
+  right: 263px;
+  transform: scale(0.9);
+  align-content: center;
+
+}
+
+.carta{
+  border-left: 185px solid #1c8ccd;
+  border-right: 185px solid #1c8ccd;
+  border-top: 180px solid transparent;
+  border-bottom: 180px solid #137ebb;
+}
+
+.pestaña {
+  position: absolute;
+  border-left: 185px solid transparent;
+  border-right: 185px solid transparent;
+  border-top: 180px solid rgb(217, 0, 58);
+  border-bottom: 180px solid transparent;
+  transition: transform .75s;
+  transform-origin: top;
+
+}
+
+
+.contenido{
+    position: absolute;
+  padding: 1.5rem;
+  line-height: 2rem;
+  right: -270px;
+  /*  */
+  z-index: -1;
+  background: white;
+  width: 370px;
+  height: 360px;
+  transition: all .75s;
+}
+
+ /* Para que las palabras largas no se salgan del contenedor */
+p{
+    word-wrap: break-word;
+}
+
+.open-contenido {
+  top: -300px;
+  height: 370px;
+
+  animation: moveContenido .5s forwards;
+}
+
+.gif{
+  max-width: 90%;
+}
+
+}
