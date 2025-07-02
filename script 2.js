@@ -26,3 +26,5 @@ btnCloseElement.addEventListener('click', ()=> {
         pestañaElement.classList.remove('open-pestaña')
     },500)
 })
+
+//Actualizado

@@ -1,2 +1,2 @@
-# 14 De Febrero Proyect
-Proyecto sobre el 14 de Febrero (Uso personal)
+# Carta de Cumpleaños Básica
+Proyecto sobre Carta de regalo para un cumpleaños (Uso personal)
